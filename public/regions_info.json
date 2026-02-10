@@ -1,0 +1,236 @@
+[
+  {
+    "Code": "af-south-1",
+    "Name": "Africa (Cape Town)",
+    "AZs": 3,
+    "Geography": "Africa"
+  },
+  {
+    "Code": "ap-east-1",
+    "Name": "Asia Pacific (Hong Kong)",
+    "AZs": 3,
+    "Geography": "Asia Pacific"
+  },
+  {
+    "Code": "ap-south-2",
+    "Name": "Asia Pacific (Hyderabad)",
+    "AZs": 3,
+    "Geography": "Asia Pacific"
+  },
+  {
+    "Code": "ap-southeast-3",
+    "Name": "Asia Pacific (Jakarta)",
+    "AZs": 3,
+    "Geography": "Asia Pacific"
+  },
+  {
+    "Code": "ap-southeast-5",
+    "Name": "Asia Pacific (Malaysia)",
+    "AZs": 3,
+    "Geography": "Asia Pacific"
+  },
+  {
+    "Code": "ap-southeast-4",
+    "Name": "Asia Pacific (Melbourne)",
+    "AZs": 3,
+    "Geography": "Asia Pacific"
+  },
+  {
+    "Code": "ap-south-1",
+    "Name": "Asia Pacific (Mumbai)",
+    "AZs": 3,
+    "Geography": "Asia Pacific"
+  },
+  {
+    "Code": "ap-southeast-6",
+    "Name": "Asia Pacific (New Zealand)",
+    "AZs": 3,
+    "Geography": "Asia Pacific"
+  },
+  {
+    "Code": "ap-northeast-3",
+    "Name": "Asia Pacific (Osaka)",
+    "AZs": 3,
+    "Geography": "Asia Pacific"
+  },
+  {
+    "Code": "ap-northeast-2",
+    "Name": "Asia Pacific (Seoul)",
+    "AZs": 4,
+    "Geography": "Asia Pacific"
+  },
+  {
+    "Code": "ap-southeast-1",
+    "Name": "Asia Pacific (Singapore)",
+    "AZs": 3,
+    "Geography": "Asia Pacific"
+  },
+  {
+    "Code": "ap-southeast-2",
+    "Name": "Asia Pacific (Sydney)",
+    "AZs": 3,
+    "Geography": "Asia Pacific"
+  },
+  {
+    "Code": "ap-east-2",
+    "Name": "Asia Pacific (Taipei)",
+    "AZs": 3,
+    "Geography": "Asia Pacific"
+  },
+  {
+    "Code": "ap-southeast-7",
+    "Name": "Asia Pacific (Thailand)",
+    "AZs": 3,
+    "Geography": "Asia Pacific"
+  },
+  {
+    "Code": "ap-northeast-1",
+    "Name": "Asia Pacific (Tokyo)",
+    "AZs": 4,
+    "Geography": "Asia Pacific"
+  },
+  {
+    "Code": "eusc-de-east-1",
+    "Name": "AWS European Sovereign Cloud (Germany)",
+    "AZs": 3,
+    "Geography": "Europe"
+  },
+  {
+    "Code": "us-gov-east-1",
+    "Name": "AWS GovCloud (US-East)",
+    "AZs": 3,
+    "Geography": "North America"
+  },
+  {
+    "Code": "us-gov-west-1",
+    "Name": "AWS GovCloud (US-West)",
+    "AZs": 3,
+    "Geography": "North America"
+  },
+  {
+    "Code": "ca-central-1",
+    "Name": "Canada (Central)",
+    "AZs": 3,
+    "Geography": "Canada"
+  },
+  {
+    "Code": "ca-west-1",
+    "Name": "Canada West (Calgary)",
+    "AZs": 3,
+    "Geography": "Canada"
+  },
+  {
+    "Code": "cn-north-1",
+    "Name": "China (Beijing)",
+    "AZs": 3,
+    "Geography": "Asia Pacific"
+  },
+  {
+    "Code": "cn-northwest-1",
+    "Name": "China (Ningxia)",
+    "AZs": 3,
+    "Geography": "Asia Pacific"
+  },
+  {
+    "Code": "eu-central-1",
+    "Name": "Europe (Frankfurt)",
+    "AZs": 3,
+    "Geography": "Europe"
+  },
+  {
+    "Code": "eu-west-1",
+    "Name": "Europe (Ireland)",
+    "AZs": 3,
+    "Geography": "Europe"
+  },
+  {
+    "Code": "eu-west-2",
+    "Name": "Europe (London)",
+    "AZs": 3,
+    "Geography": "Europe"
+  },
+  {
+    "Code": "eu-south-1",
+    "Name": "Europe (Milan)",
+    "AZs": 3,
+    "Geography": "Europe"
+  },
+  {
+    "Code": "eu-west-3",
+    "Name": "Europe (Paris)",
+    "AZs": 3,
+    "Geography": "Europe"
+  },
+  {
+    "Code": "eu-south-2",
+    "Name": "Europe (Spain)",
+    "AZs": 3,
+    "Geography": "Europe"
+  },
+  {
+    "Code": "eu-north-1",
+    "Name": "Europe (Stockholm)",
+    "AZs": 3,
+    "Geography": "Europe"
+  },
+  {
+    "Code": "eu-central-2",
+    "Name": "Europe (Zurich)",
+    "AZs": 3,
+    "Geography": "Europe"
+  },
+  {
+    "Code": "il-central-1",
+    "Name": "Israel (Tel Aviv)",
+    "AZs": 3,
+    "Geography": "Middle East"
+  },
+  {
+    "Code": "mx-central-1",
+    "Name": "Mexico (Central)",
+    "AZs": 3,
+    "Geography": "North America"
+  },
+  {
+    "Code": "me-south-1",
+    "Name": "Middle East (Bahrain)",
+    "AZs": 3,
+    "Geography": "Middle East"
+  },
+  {
+    "Code": "me-central-1",
+    "Name": "Middle East (UAE)",
+    "AZs": 3,
+    "Geography": "Middle East"
+  },
+  {
+    "Code": "sa-east-1",
+    "Name": "South America (Sao Paulo)",
+    "AZs": 3,
+    "Geography": "South America"
+  },
+  {
+    "Code": "us-east-1",
+    "Name": "US East (N. Virginia)",
+    "AZs": 6,
+    "Geography": "North America"
+  },
+  {
+    "Code": "us-east-2",
+    "Name": "US East (Ohio)",
+    "AZs": 3,
+    "Geography": "North America"
+  },
+  {
+    "Code": "us-west-1",
+    "Name": "US West (N. California)",
+    "AZs": 3,
+    "Geography": "North America"
+  },
+  {
+    "Code": "us-west-2",
+    "Name": "US West (Oregon)",
+    "AZs": 4,
+    "Geography": "North America"
+  }
+]
