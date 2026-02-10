@@ -174,9 +174,9 @@ export default function Home() {
   };
 
   return (
-    <div className="w-1/2 mx-auto mt-30">
+    <div className="w-1/2 mx-auto mt-10 p-20 rounded-2xl bg-gray-100">
       <div className="flex flex-col">
-        <h1 className="text-3xl font-bold">ARC - AWS RateCode Checker</h1>
+        <h1 className="text-3xl font-bold text-center">AWS RateCode Checker</h1>
         <ServicesCombobox
           offers={offers}
           selectedService={selectedService}
@@ -190,7 +190,7 @@ export default function Home() {
           disabled={!selectedService}
         />
         <div className="mt-8">
-          <h2 className="capitalize my-2 flex column gap-3 justify-left items-center">
+          <h2 className="capitalize my-2 flex column gap-3 justify-left items-center font-bold">
             Enter RateCode
             {selectedRegion && !pricingData && (
               <span className="flex flex-row gap-2 text-sm ml-auto mr-3">
@@ -204,7 +204,7 @@ export default function Home() {
             name="ratecode"
             disabled={!selectedRegion || !pricingData}
             required
-            className={`w-full border disabled:border-gray-400 rounded-xl px-5 py-2 mb-3 ${searchTermError && "focus:outline-red-700 border-red-700 text-red-500"}`}
+            className={`w-full border bg-white disabled:border-gray-400 rounded-xl px-5 py-2 mb-3 ${searchTermError && "focus:outline-red-700 border-red-700 text-red-500"}`}
             placeholder="RACFGSRGMXAJUC8H.JRTCKXETXF.6YS6EN2CT7"
             value={searchTerm}
             onChange={(e) => {
@@ -236,7 +236,7 @@ export default function Home() {
       <div className="mt-5">
         <h2 className="text-2xl font-bold mb-3">Results</h2>
         <div
-          className={`border rounded-xl min-h-50 p-5 ${offerDetails.length == 0 && "border-dashed border-gray-500"}`}
+          className={`border rounded-xl bg-white min-h-50 p-5 ${offerDetails.length == 0 && "border-dashed border-gray-500"}`}
         >
           {offerDetails.length !== 0 && (
             <>

@@ -42,7 +42,7 @@ export default function ServicesCombobox({
 
   return (
     <div className="mt-8">
-      <h2 className="capitalize my-2 flex column gap-3 justify-left items-center">
+      <h2 className="capitalize my-2 flex column gap-3 justify-left items-center font-bold">
         select service
         {!offers && (
           <span className="flex flex-row gap-2 text-sm ml-auto mr-3">
@@ -60,7 +60,7 @@ export default function ServicesCombobox({
         <div className="relative">
           <ComboboxInput
             className={clsx(
-              "w-full rounded-lg border py-1.5 pr-8 pl-3 text-sm/6",
+              "w-full rounded-lg border py-1.5 pr-8 pl-3 text-sm/6 bg-white",
               "focus:not-data-focus:outline-none data-focus:outline-2 data-focus:-outline-offset-2 data-focus:outline-white/25",
             )}
             displayValue={(value) => (value ? value.toString() : "")}
