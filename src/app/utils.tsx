@@ -16,13 +16,8 @@ interface Offer {
 }
 
 export interface Regions {
-  formatVersion: string;
-  disclaimer: string;
-  publicationDate: string;
-  regions: {
-    [key: string]: {
-      [key: string]: string;
-    };
+  [key: string]: {
+    [key: string]: string;
   };
 }
 

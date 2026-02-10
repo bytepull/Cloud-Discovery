@@ -21,6 +21,7 @@ export default function Home() {
   const [regions, setRegions] = useState<Regions | null>(null);
   const [selectedRegion, setSelectedRegion] = useState("");
   const [prevSelectedRegion, setPrevSelectedRegion] = useState("");
+  const [regionsInfo, setRegionsInfo] = useState<Regions | null>(null);
 
   const [pricingData, setPricingData] = useState<PricingData | null>(null);
 
@@ -32,8 +33,8 @@ export default function Home() {
     useState<React.JSX.Element | null>(null);
   const [error, setError] = useState<Error | null>(null);
 
-  /** Fetch Offers data */
   useEffect(() => {
+    /** Fetch Offers data */
     fetch(baseAWSUrl + offersAWSUrl)
       .then((response) => {
         response.json().then((data) => {
@@ -44,30 +45,55 @@ export default function Home() {
         setError(error);
         console.error(error);
       });
-  }, []);
 
-  /** Fetch Regions for selected service */
-  useEffect(() => {
-    if (!selectedService || !offers) return;
-
-    const regionURL = offers.offers[selectedService]["currentRegionIndexUrl"];
-
-    fetch(baseAWSUrl + regionURL)
+    /** Fetch regions mapping */
+    fetch("regions_info.json")
       .then((response) => {
         response.json().then((data) => {
-          setRegions(data);
+          setRegionsInfo(data);
         });
       })
       .catch((error) => {
         setError(error);
         console.error(error);
       });
-  }, [selectedService, offers]);
+  }, []);
+
+  /** Fetch Regions for selected service */
+  useEffect(() => {
+    if (!selectedService || !offers || !regionsInfo) return;
+
+    const regionURL = offers.offers[selectedService]["currentRegionIndexUrl"];
+
+    fetch(baseAWSUrl + regionURL)
+      .then((response) => {
+        response.json().then((data) => {
+          const newData = {} as Regions;
+          Object.keys(data.regions).forEach((key) => {
+            const d = {
+              name: regionsInfo[key].name,
+              code: key,
+              currentVersionUrl: data.regions[key].currentVersionUrl,
+            };
+            newData[key] = d;
+          });
+          console.log(newData);
+          
+          setRegions(newData);
+        });
+      })
+      .catch((error) => {
+        setError(error);
+        console.error(error);
+      });
+  }, [selectedService, offers, regionsInfo]);
 
   /** Fetch service pricing data for selected region and service */
   useEffect(() => {
+    console.log(selectedRegion);
+    
     if (!selectedRegion) return;
-    fetch(baseAWSUrl + regions!.regions[selectedRegion]["currentVersionUrl"])
+    fetch(baseAWSUrl + regions![selectedRegion]["currentVersionUrl"])
       .then((response) => {
         response.json().then((data) => {
           setPricingData(data);

@@ -9,7 +9,7 @@ import {
 } from "@headlessui/react";
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Regions } from "@/app/utils";
 
 interface RegionsComboboxProps {
@@ -26,29 +26,16 @@ export default function ServicesCombobox({
   disabled,
 }: RegionsComboboxProps) {
   const [query, setQuery] = useState<string>("");
-  const [error, setError] = useState<Error | null>(null);
-  // prettier-ignore
-  const [regionsInfo, setRegionsInfo] = useState<{ [key: string]: string; }[] | null>(null);
-
-  useEffect(() => {
-    fetch("regions_info.json")
-      .then((response) => {
-        response.json().then((data) => {
-          setRegionsInfo(data);
-        });
-      })
-      .catch((error) => {
-        setError(error);
-        console.error(error);
-      });
-  }, []);
 
   /** filteredRegions = ["us-east-1", "us-east-2", ...]  */
   const filteredRegions = regions
     ? query === ""
-      ? Object.keys(regions["regions"])
-      : Object.keys(regions["regions"]).filter((regionName) => {
-          return regionName.toLowerCase().includes(query.toLowerCase());
+      ? Object.keys(regions)
+      : Object.keys(regions).filter((region) => {
+          return (
+            region.toLowerCase().includes(query.toLowerCase()) ||
+            regions[region].name.toLowerCase().includes(query.toLowerCase())
+          );
         })
     : [];
 
@@ -80,11 +67,9 @@ export default function ServicesCombobox({
             )}
             displayValue={(value) =>
               value
-                ? value.toString() +
+                ? (regions?.[value.toString()]?.["name"] ?? "") +
                   " - " +
-                  (regionsInfo
-                    ?.filter((region) => region["Code"] === value.toString())
-                    .map((region) => region["Name"])[0] ?? "")
+                  value.toString()
                 : ""
             }
             disabled={disabled}
@@ -111,23 +96,13 @@ export default function ServicesCombobox({
             >
               <CheckIcon className="invisible size-4 group-data-selected:visible" />
               <div className="text-sm/6 flex flex-row flex-1">
-                <div>
-                  {regionsInfo
-                    ?.filter(
-                      (region) =>
-                        region["Code"] ===
-                        (item.match(/[a-z]{2}(-[a-z]+){1,2}-[0-9]{1}/gi)?.[0] ??
-                          item),
-                    )
-                    .map((region) => region["Name"])[0] ?? ""}
-                </div>
+                <div>{regions![item].name}</div>
                 <div className="ml-auto">{item}</div>
               </div>
             </ComboboxOption>
           ))}
         </ComboboxOptions>
       </Combobox>
-      {error && <p className="text-red-700">{error.message}</p>}
     </div>
   );
 }
